@@ -14,5 +14,50 @@
 
 <button type="button" th:text="Click">Click here to go to draw</button>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions and Spells</title>
+</head>
+<body>
+
+<h1>Champions and Spells</h1>
+
+<div th:each="champion, iterStat : ${champions}">
+    <h2 th:text="${champion.champion_name}"></h2>
+    <p>Spells:</p>
+    <ul>
+        <!-- Loop through spellsForEveryone for all champions -->
+        <li th:each="spell : ${spellsForEveryone}" th:text="${spell.spell_name}"></li>
+    </ul>
+
+    <!-- For the second champion, use spellsForJungler directly -->
+    <div th:if="${iterStat.index == 1}">
+        <p>Spells for Jungler:</p>
+        <ul>
+            <!-- Loop through spellsForJungler for the second champion -->
+            <li th:each="junglerSpell : ${spellsForJungler}" th:text="${junglerSpell.spell_name}"></li>
+        </ul>
+    </div>
+
+    <hr>
+</div>
+
+
+    <hr>
+</div>
+
+
+    <hr>
+</div>
+
+
+</body>
+</html>
+
+
+
 </body>
 </html>

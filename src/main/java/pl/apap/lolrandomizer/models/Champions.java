@@ -15,6 +15,6 @@ import lombok.*;
 public class Champions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long chhampion_id;
+    private long champion_id;
     private String champion_name;
 }
